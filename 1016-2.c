@@ -11,28 +11,28 @@ struct Node
 int main()
 {
     struct Node *head;
-    struct Node *two;
+    struct Node *Second;
     head = malloc(sizeof(struct Node));
     if (head == NULL) {
         printf("無效");
         return 1;
     }
-    two = malloc(sizeof(struct Node));
-    if (two == NULL) {
+    Second = malloc(sizeof(struct Node));
+    if (Second == NULL) {
         printf("無效");
         free(head);
         return 1;
     }
     head->data = 20;
-    head->next = two;
+    head->next = Second;
 
-    two->data = 30;
-    two->next = NULL;
+    Second->data = 30;
+    Second->next = NULL;
 
-    printf("%d\n", head->data);
-    printf("%d\n", head->next->data);
+    printf("First Node :%d\n", head->data);
+    printf("Second Node:%d\n", head->next->data);
 
-    free(two);
+    free(Second);
     free(head);
 
     return 0;
