@@ -1,13 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
-int main(){
-    int *ptr;
-    ptr= malloc(sizeof(int));
-    if (ptr == NULL){
+struct Node 
+{
+    int data;
+    struct Node *next;  
+};
+
+int main() 
+{
+    struct Node *head;
+    head=malloc(sizeof(struct Node));
+    if (head == NULL) {
         printf("無效");
         return 1;
     }
+    head ->data=10;
+    head ->next = NULL;
+    printf("%d", head ->data);
 
-    *ptr = 10;
-    printf("%d",*ptr);
+    free(head);          
+    return 0;
 }
